@@ -1,0 +1,11 @@
+/* Find out the number of sci-fi movies rented by the store managed by Jon Stephens. */
+
+
+select count(distinct fc.film_id) from rental r 
+join store sr on r.staff_id=sr.manager_staff_id 
+join staff sf on sr.manager_staff_id=sf.staff_id
+join inventory i on r.inventory_id=i.inventory_id
+join film_category fc on i.film_id=fc.film_id 
+join category cat on fc.category_id=cat.category_id
+where concat(sf.first_name," ",sf.last_name)='Jon Stephens'
+and cat.name='Sci-fi';

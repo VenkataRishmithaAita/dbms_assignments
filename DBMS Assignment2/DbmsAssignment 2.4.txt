@@ -1,0 +1,10 @@
+/* Find out the top 3 rented category of movies by “PATRICIA JOHNSON”. */
+
+
+select cat.name from customer c join rental r on c.customer_id=r.customer_id 
+join inventory i on r.inventory_id=i.inventory_id 
+join film f on i.film_id=f.film_id 
+join film_category fc on f.film_id=fc.film_id 
+join category cat on fc.category_id=cat.category_id 
+where concat(c.first_name," ",c.last_name)='PATRICIA JOHNSON' 
+order by f.rental_rate desc limit 3;

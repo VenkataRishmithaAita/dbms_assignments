@@ -1,0 +1,9 @@
+/* Find out the list of customers from Canada who have rented “NICK WAHLBERG” movies. */
+
+
+select distinct cu.* ,concat(a.first_name," ",a.last_name),cu.country from customer_list cu 
+join rental r on cu.id=r.customer_id 
+join inventory i on r.inventory_id=i.inventory_id 
+join film_actor fa on i.film_id=fa.film_id 
+join actor a on fa.actor_id=a.actor_id 
+where cu.country='CANADA' and concat(a.first_name," ",a.last_name)='NICK WAHLBERG';

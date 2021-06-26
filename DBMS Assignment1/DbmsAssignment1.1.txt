@@ -1,0 +1,4 @@
+/* Find out the PG-13 rated comedy movies. DO NOT use the film_list table.*/
+
+select f.title,c.name,f.rating from film f join film_category fc on f.film_id=fc.film_id
+join category c on fc.category_id=c.category_id where f.rating="PG-13" and c.name="Comedy";
