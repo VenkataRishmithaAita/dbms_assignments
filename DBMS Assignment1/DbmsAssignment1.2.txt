@@ -1,5 +1,0 @@
-/* Find out the top 3 rented horror movies */
-
-select f.title,c.name,f.rental_rate from category c join film_category fc on c.category_id=fc.category_id 
-join film f on fc.film_id=f.film_id
-where c.name='Horror' order by f.rental_rate desc Limit 3;

@@ -1,7 +1,0 @@
-/* Find out the number of R rated movies rented by “SUSAN WILSON”. */
-
-
-select count(f.rating) from customer c join rental r on c.customer_id=r.customer_id 
-join inventory i on r.inventory_id=i.inventory_id 
-join film f on i.film_id=f.film_id 
-where concat(c.first_name," ",c.last_name)='SUSAN WILSON' and f.rating='R';

@@ -1,5 +1,0 @@
-/* Find out the list of customers from India who have rented sports movies. */
-
-select cl.* from customer_list cl join rental r on cl.id=r.customer_id 
-join inventory i on r.inventory_id=i.inventory_id 
-join film_list fl on i.film_id=fl.fid where cl.country='India' and fl.category='Sports' ;
